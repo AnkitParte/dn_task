@@ -66,6 +66,7 @@ const ModalForm = ({ isOpen, onClose, setCountApiCall }) => {
                 type='text'
                 placeholder='Enter user name...'
                 {...register('name', { required: 'Name is required' })}
+                disabled={apiCallLoader}
               />
               {errors?.name && <InputFeedback error={errors?.name?.message} />}
             </FormControl>
@@ -75,6 +76,7 @@ const ModalForm = ({ isOpen, onClose, setCountApiCall }) => {
                 type='email'
                 placeholder='Enter user email...'
                 {...register('email', { required: 'Email is required' })}
+                disabled={apiCallLoader}
               />
               {errors?.email && (
                 <InputFeedback error={errors?.email?.message} />
@@ -85,6 +87,7 @@ const ModalForm = ({ isOpen, onClose, setCountApiCall }) => {
               <Select
                 placeholder='Select...'
                 {...register('role', { required: 'Role is required' })}
+                disabled={apiCallLoader}
               >
                 {roleOptions?.map((it) => {
                   return <option>{it?.label}</option>
