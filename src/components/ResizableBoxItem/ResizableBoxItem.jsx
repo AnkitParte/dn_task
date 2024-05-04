@@ -3,7 +3,6 @@ import React from 'react'
 import { ResizableBox } from 'react-resizable'
 import 'react-resizable/css/styles.css'
 import { resizeBoxStyle } from './helpers'
-import { Button } from '@chakra-ui/react'
 
 const ResizableBoxItem = ({ name, width, height, handleModal }) => {
   return (
@@ -15,9 +14,7 @@ const ResizableBoxItem = ({ name, width, height, handleModal }) => {
       minConstraints={[0, 0]}
       maxConstraints={[1000, 1000]}
     >
-      <Button size='sm' onClick={handleModal}>
-        Add User
-      </Button>
+      <div>{name}</div>
     </ResizableBox>
   )
 }

@@ -22,11 +22,14 @@ const ResizableContainer = () => {
         </Heading>
       </div>
       <div style={{ padding: '10px' }}>
-        <Button onClick={() => setReset((p) => !p)} size='xs'>
+        <Button onClick={() => setReset((p) => !p)} size='sm'>
           Reset Window
         </Button>
-        <Button size={'xs'} onClick={() => setCountApiCall((p) => !p)} ml={2}>
+        <Button size={'sm'} onClick={() => setCountApiCall((p) => !p)} ml={2}>
           {!loader ? 'Get Api call count' : 'Getting...'}
+        </Button>
+        <Button size='sm' ml={2} onClick={handleModal}>
+          Add User
         </Button>
       </div>
       <div style={{ padding: '10px' }}>
@@ -36,24 +39,9 @@ const ResizableContainer = () => {
         </Heading>
       </div>
       <div style={{ display: 'flex', flexWrap: 'wrap' }}>
-        <ResizableBoxItem
-          name={'Window 1'}
-          width={600}
-          height={300}
-          handleModal={handleModal}
-        />
-        <ResizableBoxItem
-          name={'Window 2'}
-          width={600}
-          height={300}
-          handleModal={handleModal}
-        />
-        <ResizableBoxItem
-          name={'Window 3'}
-          width={900}
-          height={300}
-          handleModal={handleModal}
-        />
+        <ResizableBoxItem name={'Window 1'} width={600} height={300} />
+        <ResizableBoxItem name={'Window 2'} width={600} height={300} />
+        <ResizableBoxItem name={'Window 3'} width={900} height={300} />
       </div>
       {modal && (
         <ModalForm
