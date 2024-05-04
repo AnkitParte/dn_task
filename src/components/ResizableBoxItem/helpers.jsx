@@ -12,5 +12,5 @@ export const resizeBoxStyle = {
   flexShrink: 100,
   flexGrow: 100,
   border: '2px solid coral',
-  width: '100%',
-};
+  width: '100%'
+}
