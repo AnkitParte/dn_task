@@ -40,8 +40,8 @@ const ResizableContainer = () => {
       </div>
       <div style={{ ...divStyle, color: 'coral' }}>
         <Heading as='h5' size='xs'>
-          Note : Api call will going to take time initially, may be upto 1 min
-          after that it gets better.
+          Note : Due to free tier deployment of backend, Api call will going to
+          take time initially, may be upto 1 min after that it gets better.
         </Heading>
       </div>
       <div style={divStyle}>
