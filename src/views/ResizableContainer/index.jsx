@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 import ResizableBoxItem from '../../components/ResizableBoxItem/ResizableBoxItem'
 import { Button, Heading } from '@chakra-ui/react'
 import ModalForm from '../../components/ModalForm'
@@ -14,6 +14,7 @@ const ResizableContainer = () => {
     setModal((p) => !p)
   }
 
+  let divStyle = { padding: '10px' }
   return (
     <div key={reset} style={{ padding: '20px' }}>
       <div>
@@ -21,18 +22,29 @@ const ResizableContainer = () => {
           Data Neuron Assignment
         </Heading>
       </div>
-      <div style={{ padding: '10px' }}>
+      <div style={divStyle}>
         <Button onClick={() => setReset((p) => !p)} size='sm'>
           Reset Window
         </Button>
-        <Button size={'sm'} onClick={() => setCountApiCall((p) => !p)} ml={2}>
+        <Button
+          size={'sm'}
+          onClick={() => setCountApiCall((p) => !p)}
+          ml={2}
+          disabled={loader}
+        >
           {!loader ? 'Get Api call count' : 'Getting...'}
         </Button>
         <Button size='sm' ml={2} onClick={handleModal}>
           Add User
         </Button>
       </div>
-      <div style={{ padding: '10px' }}>
+      <div style={{ ...divStyle, color: 'coral' }}>
+        <Heading as='h5' size='xs'>
+          Note : Api call will going to take time initially, may be upto 1 min
+          after that it gets better.
+        </Heading>
+      </div>
+      <div style={divStyle}>
         <Heading as='h5' size='xs'>
           Add & Update API call count -{' '}
           <span style={{ color: 'coral' }}>{loader ? '--' : count}</span>

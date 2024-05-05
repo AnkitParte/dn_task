@@ -4,7 +4,7 @@ import { ResizableBox } from 'react-resizable'
 import 'react-resizable/css/styles.css'
 import { resizeBoxStyle } from './helpers'
 
-const ResizableBoxItem = ({ name, width, height, handleModal }) => {
+const ResizableBoxItem = ({ name, width, height }) => {
   return (
     <ResizableBox
       style={resizeBoxStyle}
